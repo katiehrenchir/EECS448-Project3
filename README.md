@@ -1,6 +1,9 @@
 # Game Collection
 Desc of game collection
 
+##Next Meeting (if available)
+Tuesday, November 1, 3:00 to 5:00 in Spahr 1324 
+
 ## The Team
 This project was created by [Yehan Li][13], [Mac Crider][14], [Katie Hrenchir][15], and [Andrew Thomas][16].
 
