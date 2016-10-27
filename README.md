@@ -9,7 +9,7 @@ This project was created by [Yehan Li][13], [Mac Crider][14], [Katie Hrenchir][1
 
 - [ ] Main Menu
 	- [ ] 
-	- [ ]
+
 
 - [ ] UML Diagrams
 	- [ ] [Use case diagram][17]
@@ -18,6 +18,7 @@ This project was created by [Yehan Li][13], [Mac Crider][14], [Katie Hrenchir][1
 - [ ] [Powerpoint presentation][21]
  
  gliffy username: katieh@ku.edu
+ 
  gliffy password: Password123!
 
 [13]: https://github.com/greatyehanli
