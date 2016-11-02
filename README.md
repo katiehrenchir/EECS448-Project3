@@ -1,8 +1,5 @@
 # Game Collection
-Desc of game collection
-
-##Next Meeting (if available)
-Tuesday, November 1, 3:00 to 5:00 in Spahr 1324 
+A collection of aracade games, programmed in Java
 
 ## The Team
 This project was created by [Yehan Li][13], [Mac Crider][14], [Katie Hrenchir][15], and [Andrew Thomas][16].
@@ -10,19 +7,12 @@ This project was created by [Yehan Li][13], [Mac Crider][14], [Katie Hrenchir][1
 ## TO DO
 ##[Gantt Chart][22]
 
-- [ ] Main Menu
-	- [ ] 
-
-
-- [ ] UML Diagrams
-	- [ ] [Use case diagram][17]
-	- [ ] [State diagram] [19]
-	- [ ] [Class diagram][18]
-- [ ] [Powerpoint presentation][21]
+-  UML Diagrams
+	-  [Use case diagram][17]
+	-  [State diagram] [19]
+	-  [Class diagram][18]
+- [Powerpoint presentation][21]
  
- gliffy username: katieh@ku.edu
- 
- gliffy password: Password123!
 
 [13]: https://github.com/greatyehanli
 [14]: https://github.com/cridermac
