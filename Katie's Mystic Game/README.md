@@ -1,8 +1,9 @@
 
 ## UML Diagrams - Mystic Game
-	-  [Use case diagram][1]
-	-  [State diagram] [2]
-	-  [Class diagram][3]
+
+	[Use case diagram][1]
+	[State diagram][2]
+	[Class diagram][3]
 
  
 
