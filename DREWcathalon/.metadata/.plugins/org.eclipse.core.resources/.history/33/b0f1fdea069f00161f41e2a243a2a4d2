@@ -1,0 +1,30 @@
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+import java.io.IOException;
+
+public class Main 
+{
+	public enum State {SPLASH, PREQUESTION, QUESTION, WIN, LOSS};
+	public static int event;
+	public static boolean repeat = true;
+	public static void main(String[] args) throws LineUnavailableException, UnsupportedAudioFileException, IOException
+	{
+		State gameState = State.SPLASH;
+		while (repeat)
+		{
+			switch(gameState)
+			{
+			case SPLASH:
+				event = 0;
+				Splash splash = new Splash();
+				splash.splashSound();
+				gameState = State.PREQUESTION;
+				break;
+			case PREQUESTION:
+				event++;
+				Prequestion eventStart = new Prequestion(event);
+				
+			}
+		}
+	}
+}

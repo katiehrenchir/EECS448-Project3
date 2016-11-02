@@ -1,0 +1,28 @@
+import javax.swing.*;
+import java.awt.*;
+
+public class Main 
+{
+	private static void setupSplash()
+	{
+		JFrame frame = new JFrame("Splash");
+		
+		JButton start = new JButton("Start Game");
+		JLabel title = new JLabel("DREWcathalon");
+		JPanel content = new JPanel();
+		
+		content.add(title);
+		content.add(start);
+		content.setSize(1000, 1000);
+		
+		frame.getContentPane().add(content);
+		
+		frame.pack();
+		frame.setVisible(true);
+	}
+	
+	public static void main(String[] args)
+	{
+		setupSplash();
+	}
+}

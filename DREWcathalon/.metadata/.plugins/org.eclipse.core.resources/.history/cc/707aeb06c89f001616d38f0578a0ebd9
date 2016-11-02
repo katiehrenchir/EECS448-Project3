@@ -1,0 +1,58 @@
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+import java.io.IOException;
+import java.util.Random;
+
+public class Main 
+{
+	public enum State {SPLASH, PREQUESTION, QUESTION, WIN, LOSS};
+	public static int event;
+	public static boolean repeat = true;
+	public static Random rn = new Random();
+	
+	public static void main(String[] args) throws LineUnavailableException, UnsupportedAudioFileException, IOException
+	{
+		State gameState = State.SPLASH;
+		while (repeat)
+		{
+			switch(gameState)
+			{
+			case SPLASH:
+				event = 0;
+				Splash splash = new Splash();
+				splash.splashSound();
+				while (splash.holdState()){};
+				gameState = State.PREQUESTION;
+				break;
+			case PREQUESTION:
+				event++;
+				Prequestion eventStart = new Prequestion(event);
+				while (eventStart.holdState()){};
+				gameState = State.QUESTION;
+				break;
+			case QUESTION:
+				Question question = new Question(event, rn.nextInt(5)+1);
+				while (question.holdState()){};
+				if (question.rightState() && event > 10)
+				{
+					gameState = State.WIN;
+				}
+				else if (question.rightState())
+				{
+					gameState = State.PREQUESTION;
+				}
+				else
+				{
+					gameState = State.LOSS;
+				}
+				break;
+			case WIN:
+				
+				break;
+			case LOSS:
+				
+				break;
+			}
+		}
+	}
+}

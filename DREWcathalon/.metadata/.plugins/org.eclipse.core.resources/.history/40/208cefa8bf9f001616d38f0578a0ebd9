@@ -1,0 +1,243 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.sound.sampled.*;
+import java.io.*;
+
+public class Question 
+{
+	static private Clip qClip;
+	static private String qClipFile;
+	static private String qText;
+	static private Clip aClip;
+	static private String a1ClipFile;
+	static private String answer1;
+	static private String a2ClipFile;
+	static private String answer2;
+	static private String a3ClipFile;
+	static private String answer3;
+	static private String a4ClipFile;
+	static private String answer4;
+	static private int correct;
+	static private boolean hold = true;
+	static private boolean right;
+	
+	public Question(int round, int queston) throws UnsupportedAudioFileException, IOException, LineUnavailableException
+	{
+		JFrame frame = new JFrame("DREWcathalon");
+		
+		selector(round, queston);
+		
+		JButton ans1 = new JButton(answer1);
+		JButton ans2 = new JButton(answer2);
+		JButton ans3 = new JButton(answer3);
+		JButton ans4 = new JButton(answer4);
+		JLabel questionText = new JLabel(qText);
+		JPanel content = new JPanel();
+		
+		content.add(questionText);
+		content.add(ans1);
+		content.add(ans2);
+		content.add(ans3);
+		content.add(ans4);
+
+		frame.getContentPane().add(content);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		frame.setSize(1000, 750);
+		frame.setVisible(true);
+		
+		File qSoundFile = new File(qClipFile);
+		AudioInputStream qAudioIn = AudioSystem.getAudioInputStream(qSoundFile);
+		qClip = AudioSystem.getClip();
+		qClip.open(qAudioIn);
+		qClip.start();
+		
+		ans1.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e)
+			{
+				//Stop qClip if playing
+				if (qClip.getMicrosecondPosition() < qClip.getMicrosecondLength()) 
+				{
+					qClip.stop();
+				}
+				//Disable all buttons
+				ans1.setEnabled(false);
+				ans2.setEnabled(false);
+				ans3.setEnabled(false);
+				ans4.setEnabled(false);
+				//Play ansClip
+				File aSoundFile = new File(a1ClipFile);
+				AudioInputStream qAudioIn = AudioSystem.getAudioInputStream(qSoundFile);
+				qClip = AudioSystem.getClip();
+				qClip.open(qAudioIn);
+				qClip.start();
+				if (correct == 1)
+				{
+					//Set flag to change state to next round/WIN
+					right = true;
+				}
+				else
+				{
+					//Set flag to change state to LOSS
+					right = false;
+				}
+				//Wait while ansClip plays
+				while (qClip.getMicrosecondPosition() < qClip.getMicrosecondLength()) {};
+				//Play explQClip
+				//Wait while explQClip plays
+				while (qClip.getMicrosecondPosition() < qClip.getMicrosecondLength()) {};
+				//Set hold variable to FALSE
+				hold = false;
+				frame.dispose();
+			}
+		});
+	}
+	
+	private void selector(int round, int queston)
+	{
+		switch (round)
+		{
+		case 1:
+			switch (queston)
+			{
+			case 1:
+				qText = "Captains Kirk, Picard, and Janeway are from what sci-fi franchise?";
+				qClipFile = "";
+				correct = 3;
+				answer1 = "Star Wars";
+				a1ClipFile = "";
+				answer2 = "Firefly/Serenity";
+				a2ClipFile = "";
+				answer3 = "Star Trek";
+				a3ClipFile = "";
+				answer4 = "Lord of the Rings";
+				a4ClipFile = "";
+				break;
+			case 2:
+				qText = "What species is Chewbacca?";
+				qClipFile = "";
+				correct = 1;
+				answer1 = "Wookiee";
+				a1ClipFile = "";
+				answer2 = "Wooky";
+				a2ClipFile = "";
+				answer3 = "Time Lord";
+				a3ClipFile = "";
+				answer4 = "Wookii";
+				a4ClipFile = "";
+				break;
+			case 3:
+				qText = "The premiere video game streaming website is...";
+				qClipFile = "";
+				correct = 4;
+				answer1 = "Grand Mal Seizure";
+				answer2 = "Spasm";
+				answer3 = "Tic";
+				answer4 = "Twitch";
+				break;
+			case 4:
+				qText = "The premiere comic convention in America is held in what city?";
+				qClipFile = "";
+				correct = 1;
+				answer1 = "San Diego";
+				answer2 = "Anaheim";
+				answer3 = "New York City";
+				answer4 = "Black Rock City";
+				break;
+			case 5:
+				qText = "Why don't Captain America and Superman appear in media together that often?";
+				qClipFile = "";
+				correct = 3;
+				answer1 = "They're actually the same person";
+				answer2 = "The media they would both appear in would be too powerful";
+				answer3 = "They are owned by competing companies";
+				answer4 = "They actually do all the time in Ecuador";
+				break;
+			default:
+				qText = "";
+				qClipFile = "";
+				correct = 0;
+				answer1 = "";
+				answer2 = "";
+				answer3 = "";
+				answer4 = "";
+				break;
+			}
+			break;
+		case 2:
+			switch (queston)
+			{
+			case 1:
+				qText = "What was the title character's genin team number in Naruto?";
+				qClipFile = "";
+				correct = 2;
+				answer1 = "4";
+				answer2 = "7";
+				answer3 = "9";
+				answer4 = "It was never canonically given";
+				break;
+			case 2:
+				qText = "";
+				qClipFile = "";
+				correct = 0;
+				answer1 = "";
+				answer2 = "";
+				answer3 = "";
+				answer4 = "";
+				break;
+			case 3:
+				qText = "";
+				qClipFile = "";
+				correct = 0;
+				answer1 = "";
+				answer2 = "";
+				answer3 = "";
+				answer4 = "";
+				break;
+			case 4:
+				qText = "";
+				qClipFile = "";
+				correct = 0;
+				answer1 = "";
+				answer2 = "";
+				answer3 = "";
+				answer4 = "";
+				break;
+			case 5:
+				qText = "";
+				qClipFile = "";
+				correct = 0;
+				answer1 = "";
+				answer2 = "";
+				answer3 = "";
+				answer4 = "";
+				break;
+			default:
+				qText = "";
+				qClipFile = "";
+				correct = 0;
+				answer1 = "";
+				answer2 = "";
+				answer3 = "";
+				answer4 = "";
+				break;
+			}
+			break;
+		default:
+			break;
+		}
+	}
+	
+	public boolean holdState()
+	{
+		return hold;
+	}
+	
+	public boolean rightState()
+	{
+		return right;
+	}
+}

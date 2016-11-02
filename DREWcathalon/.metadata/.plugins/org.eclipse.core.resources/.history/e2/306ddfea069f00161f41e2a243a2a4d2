@@ -1,0 +1,42 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.sound.sampled.*;
+import java.io.*;
+
+public class Prequestion 
+{
+	private static int roundNo;
+	
+	public Prequestion(int round)
+	{
+		roundNo = round;
+		String roundName;
+		switch(roundNo)
+		{
+		case 1:
+			roundName = "Event 1";
+			break;
+		case 2:
+			roundName = "Event 2";
+			break;
+		default:
+			roundName = "The Phantom Round";
+			break;
+		}
+		
+		JFrame preFrame = new JFrame(roundName);
+		JLabel preLabel = new JLabel(roundName);
+		JPanel preContent = new JPanel();
+		
+		preContent.add(preLabel);
+		
+		preFrame.getContentPane().add(preContent);
+		preFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		preFrame.setSize(1000, 750);
+		preFrame.setVisible(true);
+	}
+}

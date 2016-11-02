@@ -1,0 +1,437 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.sound.sampled.*;
+import java.io.*;
+
+public class Question 
+{
+	static private Clip qClip;
+	static private String qClipFile;
+	static private String qText;
+	static private Clip aClip;
+	static private String a1ClipFile;
+	static private String answer1;
+	static private String a2ClipFile;
+	static private String answer2;
+	static private String a3ClipFile;
+	static private String answer3;
+	static private String a4ClipFile;
+	static private String answer4;
+	static private String expClipFile;
+	static private Clip expClip;
+	static private int correct;
+	static private boolean hold = true;
+	static private boolean right;
+	
+	public Question(int round, int queston) throws UnsupportedAudioFileException, IOException, LineUnavailableException
+	{
+		JFrame frame = new JFrame("DREWcathalon");
+		
+		selector(round, queston);
+		
+		JButton ans1 = new JButton(answer1);
+		JButton ans2 = new JButton(answer2);
+		JButton ans3 = new JButton(answer3);
+		JButton ans4 = new JButton(answer4);
+		JLabel questionText = new JLabel(qText);
+		JPanel content = new JPanel();
+		
+		content.add(questionText);
+		content.add(ans1);
+		content.add(ans2);
+		content.add(ans3);
+		content.add(ans4);
+
+		frame.getContentPane().add(content);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		frame.setSize(1000, 750);
+		frame.setVisible(true);
+		
+		File qSoundFile = new File(qClipFile);
+		AudioInputStream qAudioIn = AudioSystem.getAudioInputStream(qSoundFile);
+		qClip = AudioSystem.getClip();
+		qClip.open(qAudioIn);
+		qClip.start();
+		
+		ans1.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e)
+			{
+				//Stop qClip if playing
+				if (qClip.getMicrosecondPosition() < qClip.getMicrosecondLength()) 
+				{
+					qClip.stop();
+				}
+				//Disable all buttons
+				ans1.setEnabled(false);
+				ans2.setEnabled(false);
+				ans3.setEnabled(false);
+				ans4.setEnabled(false);
+				//Play ansClip
+				File aSoundFile = new File(a1ClipFile);
+				AudioInputStream aAudioIn = AudioSystem.getAudioInputStream(aSoundFile);
+				aClip = AudioSystem.getClip();
+				aClip.open(aAudioIn);
+				aClip.start();
+				if (correct == 1)
+				{
+					//Set flag to change state to next round/WIN
+					right = true;
+				}
+				else
+				{
+					//Set flag to change state to LOSS
+					right = false;
+				}
+				//Wait while ansClip plays
+				while (aClip.getMicrosecondPosition() < aClip.getMicrosecondLength()) {};
+				//Play explQClip
+				File expSoundFile = new File(expClipFile);
+				AudioInputStream expAudioIn = AudioSystem.getAudioInputStream(expSoundFile);
+				expClip = AudioSystem.getClip();
+				expClip.open(expAudioIn);
+				expClip.start();
+				//Wait while explQClip plays
+				while (expClip.getMicrosecondPosition() < expClip.getMicrosecondLength()) {};
+				//Set hold variable to FALSE
+				hold = false;
+				frame.dispose();
+			}
+		});
+		
+		ans2.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e)
+			{
+				//Stop qClip if playing
+				if (qClip.getMicrosecondPosition() < qClip.getMicrosecondLength()) 
+				{
+					qClip.stop();
+				}
+				//Disable all buttons
+				ans1.setEnabled(false);
+				ans2.setEnabled(false);
+				ans3.setEnabled(false);
+				ans4.setEnabled(false);
+				//Play ansClip
+				File aSoundFile = new File(a2ClipFile);
+				AudioInputStream aAudioIn = AudioSystem.getAudioInputStream(aSoundFile);
+				aClip = AudioSystem.getClip();
+				aClip.open(aAudioIn);
+				aClip.start();
+				if (correct == 2)
+				{
+					//Set flag to change state to next round/WIN
+					right = true;
+				}
+				else
+				{
+					//Set flag to change state to LOSS
+					right = false;
+				}
+				//Wait while ansClip plays
+				while (aClip.getMicrosecondPosition() < aClip.getMicrosecondLength()) {};
+				//Play explQClip
+				File expSoundFile = new File(expClipFile);
+				AudioInputStream expAudioIn = AudioSystem.getAudioInputStream(expSoundFile);
+				expClip = AudioSystem.getClip();
+				expClip.open(expAudioIn);
+				expClip.start();
+				//Wait while explQClip plays
+				while (expClip.getMicrosecondPosition() < expClip.getMicrosecondLength()) {};
+				//Set hold variable to FALSE
+				hold = false;
+				frame.dispose();
+			}
+		});
+		
+		ans3.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e)
+			{
+				//Stop qClip if playing
+				if (qClip.getMicrosecondPosition() < qClip.getMicrosecondLength()) 
+				{
+					qClip.stop();
+				}
+				//Disable all buttons
+				ans1.setEnabled(false);
+				ans2.setEnabled(false);
+				ans3.setEnabled(false);
+				ans4.setEnabled(false);
+				//Play ansClip
+				File aSoundFile = new File(a3ClipFile);
+				AudioInputStream aAudioIn = AudioSystem.getAudioInputStream(aSoundFile);
+				aClip = AudioSystem.getClip();
+				aClip.open(aAudioIn);
+				aClip.start();
+				if (correct == 3)
+				{
+					//Set flag to change state to next round/WIN
+					right = true;
+				}
+				else
+				{
+					//Set flag to change state to LOSS
+					right = false;
+				}
+				//Wait while ansClip plays
+				while (aClip.getMicrosecondPosition() < aClip.getMicrosecondLength()) {};
+				//Play explQClip
+				File expSoundFile = new File(expClipFile);
+				AudioInputStream expAudioIn = AudioSystem.getAudioInputStream(expSoundFile);
+				expClip = AudioSystem.getClip();
+				expClip.open(expAudioIn);
+				expClip.start();
+				//Wait while explQClip plays
+				while (expClip.getMicrosecondPosition() < expClip.getMicrosecondLength()) {};
+				//Set hold variable to FALSE
+				hold = false;
+				frame.dispose();
+			}
+		});
+		
+		ans4.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e)
+			{
+				//Stop qClip if playing
+				if (qClip.getMicrosecondPosition() < qClip.getMicrosecondLength()) 
+				{
+					qClip.stop();
+				}
+				//Disable all buttons
+				ans1.setEnabled(false);
+				ans2.setEnabled(false);
+				ans3.setEnabled(false);
+				ans4.setEnabled(false);
+				//Play ansClip
+				File aSoundFile = new File(a4ClipFile);
+				AudioInputStream aAudioIn = AudioSystem.getAudioInputStream(aSoundFile);
+				aClip = AudioSystem.getClip();
+				aClip.open(aAudioIn);
+				aClip.start();
+				if (correct == 4)
+				{
+					//Set flag to change state to next round/WIN
+					right = true;
+				}
+				else
+				{
+					//Set flag to change state to LOSS
+					right = false;
+				}
+				//Wait while ansClip plays
+				while (aClip.getMicrosecondPosition() < aClip.getMicrosecondLength()) {};
+				//Play explQClip
+				File expSoundFile = new File(expClipFile);
+				AudioInputStream expAudioIn = AudioSystem.getAudioInputStream(expSoundFile);
+				expClip = AudioSystem.getClip();
+				expClip.open(expAudioIn);
+				expClip.start();
+				//Wait while explQClip plays
+				while (expClip.getMicrosecondPosition() < expClip.getMicrosecondLength()) {};
+				//Set hold variable to FALSE
+				hold = false;
+				frame.dispose();
+			}
+		});
+	}
+	
+	private void selector(int round, int queston)
+	{
+		switch (round)
+		{
+		case 1:
+			switch (queston)
+			{
+			case 1:
+				qText = "Captains Kirk, Picard, and Janeway are from what sci-fi franchise?";
+				qClipFile = "quest1A.wav";
+				correct = 3;
+				answer1 = "Star Wars";
+				a1ClipFile = "ans1A1.wav";
+				answer2 = "Firefly/Serenity";
+				a2ClipFile = "ans1A2.wav";
+				answer3 = "Star Trek";
+				a3ClipFile = "ans1A3.wav";
+				answer4 = "Lord of the Rings";
+				a4ClipFile = "ans1A4.wav";
+				expClipFile = "exp1A.wav";
+				break;
+			case 2:
+				qText = "What species is Chewbacca?";
+				qClipFile = "quest1B.wav";
+				correct = 1;
+				answer1 = "Wookiee";
+				a1ClipFile = "ans1B1.wav";
+				answer2 = "Wooky";
+				a2ClipFile = "ans1B2.wav";
+				answer3 = "Time Lord";
+				a3ClipFile = "ans1B3.wav";
+				answer4 = "Wookii";
+				a4ClipFile = "ans1B4.wav";
+				expClipFile = "exp1B.wav";
+				break;
+			case 3:
+				qText = "The premiere video game streaming website is...";
+				qClipFile = "quest1C.wav";
+				correct = 4;
+				answer1 = "Grand Mal Seizure";
+				a1ClipFile = "ans1C1.wav";
+				answer2 = "Spasm";
+				a2ClipFile = "ans1C2.wav";
+				answer3 = "Tic";
+				a3ClipFile = "ans1C3.wav";
+				answer4 = "Twitch";
+				a4ClipFile = "ans1C4.wav";
+				expClipFile = "exp1C.wav";
+				break;
+			case 4:
+				qText = "The premiere comic convention in America is held in what city?";
+				qClipFile = "TEST.wav";
+				correct = 1;
+				answer1 = "San Diego";
+				a1ClipFile = "TEST.wav";
+				answer2 = "Anaheim";
+				a2ClipFile = "TEST.wav";
+				answer3 = "New York City";
+				a3ClipFile = "TEST.wav";
+				answer4 = "Black Rock City";
+				a4ClipFile = "TEST.wav";
+				expClipFile = "TEST.wav";
+				break;
+			case 5:
+				qText = "Why don't Captain America and Superman appear in media together that often?";
+				qClipFile = "TEST.wav";
+				correct = 3;
+				answer1 = "They're actually the same person";
+				a1ClipFile = "TEST.wav";
+				answer2 = "The media they would both appear in would be too powerful";
+				a2ClipFile = "TEST.wav";
+				answer3 = "They are owned by competing companies";
+				a3ClipFile = "TEST.wav";
+				answer4 = "They actually do all the time in Ecuador";
+				a4ClipFile = "TEST.wav";
+				expClipFile = "TEST.wav";
+				break;
+			default:
+				qText = "";
+				qClipFile = "";
+				correct = 0;
+				answer1 = "";
+				a1ClipFile = "";
+				answer2 = "";
+				a2ClipFile = "";
+				answer3 = "";
+				a3ClipFile = "";
+				answer4 = "";
+				a4ClipFile = "";
+				expClipFile = "";
+				break;
+			}
+			break;
+		case 2:
+			switch (queston)
+			{
+			case 1:
+				qText = "What was the title character's genin team number in Naruto?";
+				qClipFile = "TEST.wav";
+				correct = 2;
+				answer1 = "4";
+				a1ClipFile = "TEST.wav";
+				answer2 = "7";
+				a2ClipFile = "TEST.wav";
+				answer3 = "9";
+				a3ClipFile = "TEST.wav";
+				answer4 = "It was never canonically given";
+				a4ClipFile = "TEST.wav";
+				expClipFile = "TEST.wav";
+				break;
+			case 2:
+				qText = "In the anime Mobile Suit Gundam, in what year was the One Year War?";
+				qClipFile = "TEST.wav";
+				correct = 4;
+				answer1 = "2307 A.D.";
+				a1ClipFile = "TEST.wav";
+				answer2 = "CE 70";
+				a2ClipFile = "TEST.wav";
+				answer3 = "AC 175";
+				a3ClipFile = "TEST.wav";
+				answer4 = "UC 0079";
+				a4ClipFile = "TEST.wav";
+				expClipFile = "TEST.wav";
+				break;
+			case 3:
+				qText = "In the anime/manga Bleach, how many court guard squads are there in the Seireitei?";
+				qClipFile = "TEST.wav";
+				correct = 4;
+				answer1 = "8";
+				a1ClipFile = "TEST.wav";
+				answer2 = "48";
+				a2ClipFile = "TEST.wav";
+				answer3 = "15";
+				a3ClipFile = "TEST.wav";
+				answer4 = "13";
+				a4ClipFile = "TEST.wav";
+				expClipFile = "TEST.wav";
+				break;
+			case 4:
+				qText = "The first name of the protagonist of the One Piece franchise is...";
+				qClipFile = "TEST.wav";
+				correct = 3;
+				answer1 = "Tiger";
+				a1ClipFile = "TEST.wav";
+				answer2 = "Chopper";
+				a2ClipFile = "TEST.wav";
+				answer3 = "Monkey";
+				a3ClipFile = "TEST.wav";
+				answer4 = "Dave";
+				a4ClipFile = "TEST.wav";
+				expClipFile = "TEST.wav";
+				break;
+			case 5:
+				qText = "Anime and manga aimed at young girls is known as what in Japanese?";
+				qClipFile = "TEST.wav";
+				correct = 1;
+				answer1 = "Shojo";
+				a1ClipFile = "TEST.wav";
+				answer2 = "Shonen";
+				a2ClipFile = "TEST.wav";
+				answer3 = "Yaoi";
+				a3ClipFile = "TEST.wav";
+				answer4 = "Otome";
+				a4ClipFile = "TEST.wav";
+				expClipFile = "TEST.wav";
+				break;
+			default:
+				qText = "";
+				qClipFile = "";
+				correct = 0;
+				answer1 = "";
+				a1ClipFile = "";
+				answer2 = "";
+				a2ClipFile = "";
+				answer3 = "";
+				a3ClipFile = "";
+				answer4 = "";
+				a4ClipFile = "";
+				expClipFile = "";
+				break;
+			}
+			break;
+		default:
+			break;
+		}
+	}
+	
+	public boolean holdState()
+	{
+		return hold;
+	}
+	
+	public boolean rightState()
+	{
+		return right;
+	}
+}

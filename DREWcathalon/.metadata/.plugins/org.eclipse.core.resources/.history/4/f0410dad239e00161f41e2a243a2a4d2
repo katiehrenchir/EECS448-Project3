@@ -1,0 +1,42 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import javax.sound.sampled.*;
+import java.io.*;
+
+public class Main 
+{
+	private Clip clip;
+	public static void setupSplash() throws UnsupportedAudioFileException, IOException, LineUnavailableException
+	{
+		JFrame frame = new JFrame("Splash");
+		File soundFile = new File("TEST.wav");
+		AudioInputStream audioIn = AudioSystem.getAudioInputStream(soundFile);
+		clip = AudioSystem.getClip();
+		clip.open(audioIn);
+		
+		JButton start = new JButton("Start Game");
+		JLabel title = new JLabel("DREWcathalon");
+		JPanel content = new JPanel();
+		
+		content.add(title);
+		content.add(start);
+
+		frame.getContentPane().add(content);
+		
+		frame.setSize(1000, 750);
+		frame.setVisible(true);
+		clip.start();
+		clip.loop(Clip.LOOP_CONTINUOUSLY);
+	}
+	
+	public void actionPerformed(ActionEvent e)
+	{
+		clip.stop();
+	}
+	
+	public static void main(String[] args) throws UnsupportedAudioFileException, IOException, LineUnavailableException
+	{
+		setupSplash();
+	}
+}

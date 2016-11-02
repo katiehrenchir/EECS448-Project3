@@ -1,0 +1,14 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import javax.sound.sampled.*;
+import java.io.*;
+
+public class Main 
+{
+
+	public static void main(String[] args)
+	{
+		
+	}
+}

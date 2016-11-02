@@ -1,0 +1,124 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.sound.sampled.*;
+import java.io.*;
+
+public class Question 
+{
+	static private Clip qClip;
+	static private String qClipFile;
+	static private String qText;
+	static private String answer1;
+	static private String answer2;
+	static private String answer3;
+	static private String answer4;
+	static private int correct;
+	
+	public Question(int round, int queston)
+	{
+		JFrame frame = new JFrame("DREWcathalon");
+		
+		selector(round, queston);
+		
+		JButton ans1 = new JButton(answer1);
+		JButton ans2 = new JButton(answer2);
+		JButton ans3 = new JButton(answer3);
+		JButton ans4 = new JButton(answer4);
+		JLabel questionText = new JLabel(qText);
+		JPanel content = new JPanel();
+		
+		content.add(questionText);
+		content.add(ans1);
+		content.add(ans2);
+		content.add(ans3);
+		content.add(ans4);
+
+		frame.getContentPane().add(content);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		frame.setSize(1000, 750);
+		frame.setVisible(true);
+	}
+	
+	private void selector(int round, int queston)
+	{
+		switch (round)
+		{
+		case 1:
+			switch (queston)
+			{
+			case 1:
+				qText = "Captains Kirk, Picard, and Janeway are from what sci-fi franchise?";
+				correct = 3;
+				answer1 = "Star Wars";
+				answer2 = "Firefly/Serenity";
+				answer3 = "Star Trek";
+				answer4 = "Lord of the Rings";
+				break;
+			case 2:
+				qText = "What species is Chewbacca?";
+				correct = 1;
+				answer1 = "Wookiee";
+				answer2 = "Wooky";
+				answer3 = "Time Lord";
+				answer4 = "Wookii";
+				break;
+			case 3:
+				qText = "The premiere video game streaming website is...";
+				correct = 4;
+				answer1 = "Grand Mal Seizure";
+				answer2 = "Spasm";
+				answer3 = "Tic";
+				answer4 = "Twitch";
+				break;
+			case 4:
+				qText = "The premiere comic convention in America is held in what city?";
+				correct = 1;
+				answer1 = "San Diego";
+				answer2 = "Anaheim";
+				answer3 = "New York City";
+				answer4 = "Black Rock City";
+				break;
+			case 5:
+				qText = "Why don't Captain America and Superman appear in media together that often?";
+				correct = 3;
+				answer1 = "They're actually the same person";
+				answer2 = "The media they would both appear in would be too powerful";
+				answer3 = "They are owned by competing companies";
+				answer4 = "They actually do all the time in Ecuador";
+				break;
+			default:
+				qText = "";
+				correct = 0;
+				answer1 = "";
+				answer2 = "";
+				answer3 = "";
+				answer4 = "";
+				break;
+			}
+			break;
+		case 2:
+			switch (queston)
+			{
+			case 1:
+				break;
+			case 2:
+				break;
+			case 3:
+				break;
+			case 4:
+				break;
+			case 5:
+				break;
+			default:
+				break;
+			}
+			break;
+		default:
+			break;
+		}
+	}
+}
