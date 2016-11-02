@@ -12,19 +12,12 @@ public class MysticDriver
 		
 		frame.getContentPane().add(demo.getContent());
 		frame.pack();
-		frame.setSize(800, 800);
+		frame.setSize(800, 1000);
 		frame.setVisible(true);
-	}
-	
-	private static void accessReddit(){
-		
-		
-		
 	}
 	
 	public static void main(String[] args)  
 	{
-		accessReddit();
 		createAndDisplayGUI();
 	}
 	
