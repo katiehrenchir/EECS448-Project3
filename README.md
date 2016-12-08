@@ -8,7 +8,7 @@ This project was created by [Yehan Li][1], [Mac Crider][2], [Katie Hrenchir][3],
 
 - [ ] [Product Backlog] [5]
 
-- [ ] Documentation 
+- [ ] [Documentation] [6]
  
 - [ ] UML Diagrams (username: khrenchir@ku.edu password: Password123!)
 
@@ -35,7 +35,7 @@ This project was created by [Yehan Li][1], [Mac Crider][2], [Katie Hrenchir][3],
 [3]: https://github.com/katiehrenchir
 [4]: https://github.com/athoma35
 [5]: https://docs.google.com/document/d/1LsJSnwMTAJJm8na-VXD4mE2kYqZKOKnkWg-FKg-jnv4/edit?usp=sharing
-
+[6]: https://people.eecs.ku.edu/~khrenchi/eecs448-final/index.html
 [7]: https://www.gliffy.com/go/share/svetjyoio15q1huke8v7
 [8]: https://www.gliffy.com/go/share/sosndkw7j7b5fekv3qcc
 [9]: https://www.gliffy.com/go/share/sdpyas24py38quv0p38s
