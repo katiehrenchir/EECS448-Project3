@@ -10,7 +10,7 @@ This project was created by [Yehan Li][1], [Mac Crider][2], [Katie Hrenchir][3],
 
 - [ ] [Documentation] [6]
  
-- [ ] UML Diagrams (username: khrenchir@ku.edu password: Password123!)
+- [ ] UML Diagrams (username: k920h563@ku.edu password: Password123!)
 
    - [ ] [Use Case Diagram(s)] [7]
    - [ ] [State Diagram(s)] [8]
