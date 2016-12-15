@@ -1,4 +1,4 @@
-# Game Collection
+# Slider's Arcade Collection
 A collection of aracade games, programmed in Java. The assignment description is [here.][15]
 
 ## The Team
@@ -6,31 +6,23 @@ This project was created by [Yehan Li][1], [Mac Crider][2], [Katie Hrenchir][3],
 
 ##Artifacts
 
-- [ ] [Product Backlog] [5]
+- [Product Backlog] [5]
 
-- [ ] [Documentation] [6]
+- [Documentation for Zoltar's Advice Giver] [6]
 
-- [ ] [Documentation For the Tower Defense Game] [16]
- 
-- [ ] UML Diagrams (username: k920h563@ku.edu password: Password123!)
-
-   - [ ] [Use Case Diagram(s)] [7]
-   - [ ] [State Diagram(s)] [8]
-   - [ ] [Class Diagrams] [9]
+- [Documentation For the Tower Defense Game] [16]
    
-- [ ] [Gantt Chart] [10]
+- [Gantt Chart] [10]
 
-- [ ] Test Suite
-
-- [ ] [Bug list] [11]
+- [Bug list] [11]
 
 ## Final Requirements
  
-- [ ] [User's Manual] [12]
+- [User's Manual] [12]
 
-- [ ] [Deployment Plan] [13]
+- [Deployment Plan] [13]
 
-- [ ] [Maintenence Plan] [14]
+- [Maintenence Plan] [14]
 
 [1]: https://github.com/greatyehanli
 [2]: https://github.com/cridermac
