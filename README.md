@@ -9,6 +9,8 @@ This project was created by [Yehan Li][1], [Mac Crider][2], [Katie Hrenchir][3],
 - [ ] [Product Backlog] [5]
 
 - [ ] [Documentation] [6]
+
+- [ ] [Documentation For the Tower Defense Game] [16]
  
 - [ ] UML Diagrams (username: k920h563@ku.edu password: Password123!)
 
@@ -45,4 +47,6 @@ This project was created by [Yehan Li][1], [Mac Crider][2], [Katie Hrenchir][3],
 [13]: https://docs.google.com/document/d/1L_oYVUsOi9RAWq2sxHXjerjYLD3VP64fcDTv8KlmT98/edit?usp=sharing
 [14]: https://docs.google.com/document/d/1xzM9gB6GAwrs8XsZej8lvyPq9AE-Hx_jrkzyh7Gm2kk/edit?usp=sharing
 [15]: https://wiki.ittc.ku.edu/ittc_wiki/index.php/EECS448:Project4
+[16]: https://people.eecs.ku.edu/~yli94/index.html
+
 
